@@ -3,9 +3,9 @@ A CNN multi-class classifier recognising a price category of empty bottles depos
 
 ## Table of Contents
 - [Dataset](https://github.com/marcinstopyra/pfand_clf#dataset)
-- [Data preprocessing](https://github.com/marcinstopyra/pfand_clf#Data preprocessing)
-- [Data labeling](https://github.com/marcinstopyra/pfand_clf#Data labeling)
-- [CNN Classifier](https://github.com/marcinstopyra/pfand_clf#CNN Classifier)
+- [Data preprocessing](https://github.com/marcinstopyra/pfand_clf#Data-preprocessing)
+- [Data labeling](https://github.com/marcinstopyra/pfand_clf#Data-labeling)
+- [CNN Classifier](https://github.com/marcinstopyra/pfand_clf#CNN-Classifier)
 - [TODOs](https://github.com/marcinstopyra/pfand_clf#TODOs)
 
 
