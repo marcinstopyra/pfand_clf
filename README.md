@@ -1,9 +1,18 @@
 # PFAND Classifier
 A CNN multi-class classifier recognising a price category of empty bottles deposits in German Pfand system, trained and tested on own dataset 
 
+## Table of Contents
+- [Dataset](https://github.com/marcinstopyra/pfand_clf#dataset)
+- [Data preprocessing](https://github.com/marcinstopyra/pfand_clf#Data preprocessing)
+- [Data labeling](https://github.com/marcinstopyra/pfand_clf#Data labeling)
+- [CNN Classifier](https://github.com/marcinstopyra/pfand_clf#CNN Classifier)
+- [TODOs](https://github.com/marcinstopyra/pfand_clf#TODOs)
+
+
 ## Dataset
 The dataset contains >650 pictures of bottles/cans/empty slots in the box taken from above. Example samples:
 ![example sample](./graphics/example_samples.png)
+
 All pictures show a single object in a box or outside, they are all preprocessed by code contained in [dataset_preprocessing_Pfand_clf.ipynb](https://github.com/marcinstopyra/pfand_clf/blob/master/dataset_preprocessing_Pfand_clf.ipynb) notebook (more about preprocessing in next section)
 
 
@@ -20,7 +29,7 @@ Data preprocessing is conducted by the code from [dataset_preprocessing_Pfand_cl
 Samples were labeled manually with use of labeling tool created by GitHub user Dida-do [[GH repository](https://github.com/dida-do/public/tree/master/labelingtool)]. The programme was modified to meet the requirements of the project
 
 ## CNN Classifier
-In the last notebook - [pfand_clf](https://github.com/marcinstopyra/pfand_clf/blob/master/pfand_clf.ipynb) the CNN classifier is built. The dataset is split into train and test split containing:
+In the last notebook - [pfand_clf.ipynb](https://github.com/marcinstopyra/pfand_clf/blob/master/pfand_clf.ipynb) the CNN classifier is built. The dataset is split into train and test split containing:
 - train set - 80% samples
 - test set - 20% samples
 
@@ -55,3 +64,9 @@ Confusion matrix was created to show which samples were mispredicted:
 Mispredicted samples:
 
 ![misprediction](./graphics/mispredicted_samples.png)
+
+## TODOs:
+There are few extensions planned for the project:
+- automatic labeling of new samples with use of semi-supervised learning (KMean clustering)
+- development of an application that would take a picture of a box full of mixed pfand bottles/cans/empty slots, put a grid on it, classify each slot and calculate the summed up value of deposit
+- deployment of programme mentioned above in form of web/mobile application
