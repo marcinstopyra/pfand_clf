@@ -21,6 +21,15 @@ The dataset imperfections:
 - Most of the photos were taken with the same devices - more photos from different devices should be added
 - Dataset does not contain any plastic bottles (huge part of 25 cents deposit value category)
 
+### Why pictures from the top?
+The initial idea was simple, just take picture of the bottle. But this approach leads to many problems in training a network and would require much much bigger training dataset. The data I gathered with my friends was not as big and it was a bit biased, it consisted mostly of the beers produced in the local area (Stuttgart region - Stuttgarter Hofbräu, Schwaben Bräu beers etc.), cheap brands (Oettinger, Hasseröder etc.) caffeine drinks popular among students (Club Mate, Red Bull etc.) Therefore, there is a high possibility that the features learned by the model will be also biased. For example, the model can learn label designs or logos. 
+
+We can clearly see this problem when we look at different products of Stuttgarter Hofbräu. In the pictures, we have 3 Pfand beer containers, each of them having a different value. In the training dataset, there is a much higher number of the samples presenting a regular pilsner bottle (value - 8 cents) than the other two, which are less popular on Campus due to their higher price and lower availability in nearby shops. We can then expect the model to learn to associate the Stuttgarter Hofbräu logo with the 8 cents value category, which would lead to mistakes every time it sees the same logo on the bottle with a swing top or on a can.
+
+![Different beer containers of Stuttgarter Hofbrau](./graphics/stuttgarter.png)
+
+This problem can be easily tackled by classifying the bottles based on the pictures taken from a bird's perspective. As we can see the main feature of differing value categories can be seen on the neck of the bottle (type of closure) and the cans obviously are easily recognised from the top too. From this perspective, the labels are not visible, which prevents the model from learning some misleading features.
+
 
 ## Data preprocessing
 Data preprocessing is conducted by the code from [dataset_preprocessing_Pfand_clf.ipynb](https://github.com/marcinstopyra/pfand_clf/blob/master/dataset_preprocessing_Pfand_clf.ipynb) notebook. The raw images are read from a raw_data folder, they are rotated if needed, resized to desired smaller size, cropped and saved in ready_data directory. The preprocessed raw samples are moved from raw_data folder to another backup folder.
